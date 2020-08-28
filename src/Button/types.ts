@@ -1,7 +1,7 @@
 export type ButtonKind = 'primary';
 
 export interface BaseButtonProps {
-  isLoading?: boolean;
+  loading?: boolean;
   kind?: ButtonKind;
   disabled?: boolean;
 }

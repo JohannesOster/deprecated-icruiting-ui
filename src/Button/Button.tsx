@@ -7,21 +7,16 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   url,
   kind,
-  isLoading,
+  loading,
   disabled,
   ...props
 }) => {
   if (url) return <Link href={url}>{children}</Link>;
 
   return (
-    <BaseButton
-      isLoading={isLoading}
-      kind={kind}
-      disabled={disabled}
-      {...props}
-    >
-      <span style={isLoading ? {opacity: 0, height: 0} : {}}>{children}</span>
-      {isLoading && (
+    <BaseButton loading={loading} kind={kind} disabled={disabled} {...props}>
+      <span style={loading ? {opacity: 0, height: 0} : {}}>{children}</span>
+      {loading && (
         <LoadingSpinnerContainer>
           <LoadingSpinner kind={kind} disabled={disabled} />
         </LoadingSpinnerContainer>
