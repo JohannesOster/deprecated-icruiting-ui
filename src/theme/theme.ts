@@ -19,9 +19,19 @@ export const theme = {
     buttonLoadingSpinnerDisabledForeground: colors.gray400,
     buttonLoadingSpinnerDisabledBackground: colors.gray200,
 
+    // - inputs
+    inputBorder: colors.gray100,
+    inputFill: colors.white,
+    inputBorderFocus: colors.gray500,
+
+    inputBorderError: colors.red400,
+    inputFillErrorFocus: colors.red50,
+
     // - typography
     typographyPrimary: colors.gray800,
     typographySecondary: colors.gray600,
+    typographyPrimaryError: colors.red400,
+    typographySecondaryError: colors.red300,
   },
   borders: {radius: '2px'},
   spacing,
