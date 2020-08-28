@@ -1,5 +1,5 @@
 export type InputType =
-  | 'textarea'
+  | 'file'
   | 'text'
   | 'color'
   | 'tel'
@@ -26,6 +26,7 @@ export interface InputProps {
 
 export interface BaseInputProps {
   error: boolean;
+  type?: InputType;
 }
 
 export interface LabelProps {

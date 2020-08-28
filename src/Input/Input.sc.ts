@@ -30,6 +30,15 @@ export const BaseInput = styled.input<BaseInputProps>`
         background-color: ${theme.colors.inputFill};
       }
     `}
+
+  ${({theme, type, error}) =>
+    type === 'file' &&
+    css`
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      ${error && {color: theme.colors.typographyPrimaryError}}
+    `};
 `;
 
 export const Label = styled.label<LabelProps>`
