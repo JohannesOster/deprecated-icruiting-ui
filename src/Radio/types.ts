@@ -9,10 +9,6 @@ export interface RadioProps {
   options: Array<{label: string; value: string}>;
 }
 
-export interface BaseInputProps {
-  error: boolean;
-}
-
 export interface LabelProps {
   error: boolean;
 }
