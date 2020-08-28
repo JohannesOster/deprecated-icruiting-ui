@@ -1,13 +1,25 @@
 import React from 'react';
 import {Story} from '@storybook/react';
-import {Button, Props} from './Button';
+import {Button} from './Button';
+import {ButtonProps} from './types';
 
 export default {
   title: 'Button',
   component: Button,
+  argTypes: {
+    kind: {
+      defaultValue: 'primary',
+      control: {
+        type: 'select',
+        options: ['primary'],
+      },
+    },
+  },
 };
 
-const Template: Story<Props> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {background: 'darkCyan', children: 'Buttonlabel'};
+Primary.args = {
+  children: 'Button',
+};
