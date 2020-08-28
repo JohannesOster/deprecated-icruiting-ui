@@ -18,6 +18,10 @@ export const theme = {
     buttonLoadingSpinnerBackground: colors.gray600,
     buttonLoadingSpinnerDisabledForeground: colors.gray400,
     buttonLoadingSpinnerDisabledBackground: colors.gray200,
+
+    // - typography
+    typographyPrimary: colors.gray800,
+    typographySecondary: colors.gray600,
   },
   borders: {radius: '2px'},
   spacing,

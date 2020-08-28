@@ -1,6 +1,7 @@
 import React from 'react';
 import {ButtonProps} from './types';
 import {BaseButton, LoadingSpinner, LoadingSpinnerContainer} from './Button.sc';
+import {Link} from '../Link';
 
 export const Button: React.FC<ButtonProps> = ({
   children,
@@ -10,7 +11,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  if (url) return <a href={url}>{children}</a>;
+  if (url) return <Link href={url}>{children}</Link>;
 
   return (
     <BaseButton
