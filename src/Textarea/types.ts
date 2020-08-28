@@ -1,21 +1,5 @@
-export type InputType =
-  | 'textarea'
-  | 'text'
-  | 'color'
-  | 'tel'
-  | 'url'
-  | 'number'
-  | 'email'
-  | 'password'
-  | 'date'
-  | 'datetime-local'
-  | 'month'
-  | 'week'
-  | 'time';
-
-export interface InputProps {
+export interface TextareaProps {
   name?: string;
-  type?: InputType;
   label?: string;
   placeholder?: string;
   autoFocus?: boolean;
@@ -24,7 +8,7 @@ export interface InputProps {
   errors?: Array<string>;
 }
 
-export interface BaseInputProps {
+export interface BaseTextareaProps {
   error: boolean;
 }
 
