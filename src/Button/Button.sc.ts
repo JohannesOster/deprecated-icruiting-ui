@@ -45,32 +45,6 @@ export const LoadingSpinnerContainer = styled.div`
   margin: 2px 0px; // to move spinner to center;
 `;
 
-export const LoadingSpinner = styled.span<LoadingSpinnerProps>`
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: 3px solid;
-  box-sizing: border-box;
-
-  @keyframes spinnerAnimation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  display: inline-block;
-  animation-duration: ${({theme}) => theme.animation.timing800};
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-name: spinnerAnimation;
-
-  ${({theme, kind, disabled}) =>
-    getLoadingSpinnerStylesForKind(theme, kind, disabled)};
-`;
-
 const getButtonStylesForKind = (
   theme?: DefaultTheme,
   kind: ButtonKind = 'primary',

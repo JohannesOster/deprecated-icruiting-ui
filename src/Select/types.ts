@@ -1,3 +1,5 @@
+import {ChangeEvent, FocusEvent} from 'react';
+
 export interface SelectProps {
   name?: string;
   label?: string;
@@ -6,6 +8,13 @@ export interface SelectProps {
   required?: boolean;
   errors?: Array<string>;
   options: Array<{label: string; value: string}>;
+  value?: string;
+  defaultValue?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  onBlur?(event: FocusEvent<HTMLSelectElement>): void;
+  onFocus?(event: FocusEvent<HTMLSelectElement>): void;
+  onChange?(event: ChangeEvent<HTMLSelectElement>): void;
 }
 
 export interface BaseSelectProps {

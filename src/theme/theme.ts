@@ -15,9 +15,7 @@ export const theme = {
     buttonPrimaryDisabledText: colors.gray400,
 
     buttonLoadingSpinnerForeground: colors.white,
-    buttonLoadingSpinnerBackground: colors.gray600,
-    buttonLoadingSpinnerDisabledForeground: colors.gray400,
-    buttonLoadingSpinnerDisabledBackground: colors.gray200,
+    buttonLoadingSpinnerBackground: colors.gray500,
 
     // - inputs
     inputBorder: colors.gray100,
@@ -32,6 +30,10 @@ export const theme = {
     typographySecondary: colors.gray600,
     typographyPrimaryError: colors.red400,
     typographySecondaryError: colors.red300,
+
+    // - loadingspinner
+    loadingSpinnerBackground: colors.gray300,
+    loadingSpinnerForeground: colors.gray700,
   },
   borders: {radius: '2px'},
   spacing,

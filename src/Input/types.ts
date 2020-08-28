@@ -1,3 +1,5 @@
+import {ChangeEvent, FocusEvent} from 'react';
+
 export type InputType =
   | 'file'
   | 'text'
@@ -22,6 +24,13 @@ export interface InputProps {
   description?: string;
   required?: boolean;
   errors?: Array<string>;
+  value?: string;
+  defaultValue?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  onBlur?(event: FocusEvent<HTMLInputElement>): void;
+  onFocus?(event: FocusEvent<HTMLInputElement>): void;
+  onChange?(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 export interface BaseInputProps {
