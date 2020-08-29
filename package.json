@@ -2,6 +2,9 @@
   "name": "icruiting-ui",
   "version": "0.1.0",
   "main": "./build/index.js",
+  "description": "A React Component library",
+  "license": "MIT",
+  "author": "Johannes Oster",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -11,8 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/JohannesOster/icruiting-ui.git"
   },
-  "author": "Johannes Oster",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/JohannesOster/icruiting-ui/issues"
   },
