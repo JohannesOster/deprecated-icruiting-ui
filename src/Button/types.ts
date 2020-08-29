@@ -8,7 +8,6 @@ export interface BaseButtonProps {
 
 export interface ButtonProps extends BaseButtonProps {
   children?: string;
-  url?: string;
 }
 
 export interface LoadingSpinnerProps {

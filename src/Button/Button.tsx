@@ -2,20 +2,16 @@ import React from 'react';
 import {useTheme} from 'styled-components';
 import {ButtonProps} from './types';
 import {BaseButton, LoadingSpinnerContainer} from './Button.sc';
-import {Link} from '../Link';
 import {LoadingSpinner} from '../LoadingSpinner';
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  url,
   kind,
   loading,
   disabled,
   ...props
 }) => {
   const {colors} = useTheme();
-
-  if (url) return <Link href={url}>{children}</Link>;
 
   return (
     <BaseButton loading={loading} kind={kind} disabled={disabled} {...props}>
