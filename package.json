@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "description": "A React Component library",
   "license": "MIT",
   "author": "Johannes Oster",

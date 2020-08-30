@@ -6,6 +6,12 @@
 $ npm install icruiting-ui styled-components --save
 ```
 
+If you are using Typescript install styled-components type declarations as well.
+
+```
+$ npm install @types/styled-components --save
+```
+
 ```
 import {ThemeProvider} from 'styled-components';
 import {theme} from 'icruiting-ui';
