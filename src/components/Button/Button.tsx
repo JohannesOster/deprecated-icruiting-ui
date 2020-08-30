@@ -2,7 +2,7 @@ import React from 'react';
 import {useTheme} from 'styled-components';
 import {ButtonProps} from './types';
 import {BaseButton, LoadingSpinnerContainer} from './Button.sc';
-import {LoadingSpinner} from '../LoadingSpinner';
+import {LoadingSpinner} from 'components';
 
 export const Button: React.FC<ButtonProps> = ({
   children,

@@ -1,5 +1,5 @@
 import styled, {css, DefaultTheme} from 'styled-components';
-import {ButtonKind, BaseButtonProps, LoadingSpinnerProps} from './types';
+import {ButtonKind, BaseButtonProps} from './types';
 
 export const BaseButton = styled.button<BaseButtonProps>`
   margin: 0;
@@ -61,27 +61,6 @@ const getButtonStylesForKind = (
         &:hover {
           background-color: ${theme.colors.buttonPrimaryFillHover};
         }
-      `;
-  }
-};
-
-const getLoadingSpinnerStylesForKind = (
-  theme?: DefaultTheme,
-  kind: ButtonKind = 'primary',
-  disabled?: boolean,
-) => {
-  if (disabled) {
-    return css`
-      border-color: ${theme.colors.buttonLoadingSpinnerDisabledBackground};
-      border-top-color: ${theme.colors.buttonLoadingSpinnerDisabledForeground};
-    `;
-  }
-
-  switch (kind) {
-    case 'primary':
-      return css`
-        border-color: ${theme.colors.buttonLoadingSpinnerBackground};
-        border-top-color: ${theme.colors.buttonLoadingSpinnerForeground};
       `;
   }
 };

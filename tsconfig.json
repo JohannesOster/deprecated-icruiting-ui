@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "rootDir": "./",
     "declaration": true,
     "declarationDir": "build",
     "module": "esnext",

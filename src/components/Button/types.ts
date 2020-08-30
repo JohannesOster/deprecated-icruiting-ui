@@ -1,3 +1,5 @@
+import {ReactNode} from 'react';
+
 export type ButtonKind = 'primary';
 
 export interface BaseButtonProps {
@@ -7,10 +9,5 @@ export interface BaseButtonProps {
 }
 
 export interface ButtonProps extends BaseButtonProps {
-  children?: string;
-}
-
-export interface LoadingSpinnerProps {
-  kind?: ButtonKind;
-  disabled?: boolean;
+  children?: ReactNode;
 }
