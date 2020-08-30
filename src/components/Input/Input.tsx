@@ -15,7 +15,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {props.required && '*'}
         </Label>
         <Description error={!!errors.length}>{description}</Description>
-        <BaseInput error={!!errors.length} ref={ref} {...props} />
+        <BaseInput
+          id={props.name}
+          error={!!errors.length}
+          ref={ref}
+          {...props}
+        />
         <Errors>{_errors}</Errors>
       </Container>
     );
