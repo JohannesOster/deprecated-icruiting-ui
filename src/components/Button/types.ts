@@ -1,11 +1,12 @@
-import {ReactNode} from 'react';
+import {ReactNode, MouseEvent} from 'react';
 
 export type ButtonKind = 'primary';
 
 export interface BaseButtonProps {
-  loading?: boolean;
+  isLoading?: boolean;
   kind?: ButtonKind;
   disabled?: boolean;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface ButtonProps extends BaseButtonProps {

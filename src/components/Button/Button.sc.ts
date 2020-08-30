@@ -4,7 +4,7 @@ import {ButtonKind, BaseButtonProps} from './types';
 export const BaseButton = styled.button<BaseButtonProps>`
   margin: 0;
   display: inline-flex;
-  flex-direction: ${({loading}) => (loading ? 'column' : 'row')};
+  flex-direction: ${({isLoading}) => (isLoading ? 'column' : 'row')};
   align-items: center;
   justify-content: center;
   position: relative;
@@ -30,8 +30,8 @@ export const BaseButton = styled.button<BaseButtonProps>`
     color: ${({theme}) => theme.colors.buttonPrimaryDisabledText};
   }
 
-  ${({loading}) =>
-    loading &&
+  ${({isLoading}) =>
+    isLoading &&
     css`
       pointer-events: none;
     `}
@@ -42,7 +42,6 @@ export const BaseButton = styled.button<BaseButtonProps>`
 export const LoadingSpinnerContainer = styled.div`
   position: static;
   line-height: 0;
-  margin: 2px 0px; // to move spinner to center;
 `;
 
 const getButtonStylesForKind = (

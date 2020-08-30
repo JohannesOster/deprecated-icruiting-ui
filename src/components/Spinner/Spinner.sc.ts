@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {LoadingSpinnerProps} from './types';
+import {SpinnerProps} from './types';
 
-export const LoadingSpinner = styled.span<LoadingSpinnerProps>`
+export const Spinner = styled.span<SpinnerProps>`
   height: ${({size, theme}) => size || theme.spacing.scale400};
   width: ${({size, theme}) => size || theme.spacing.scale400};
   border-radius: 50%;

@@ -1,24 +1,34 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import {useTheme} from 'styled-components';
 import {ButtonProps} from './types';
 import {BaseButton, LoadingSpinnerContainer} from './Button.sc';
-import {LoadingSpinner} from 'components';
+import {Spinner} from 'components';
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  kind,
-  loading,
+  isLoading,
   disabled,
+  onClick,
   ...props
 }) => {
   const {colors} = useTheme();
 
+  const _onClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (isLoading) return;
+    onClick && onClick(event);
+  };
+
   return (
-    <BaseButton loading={loading} kind={kind} disabled={disabled} {...props}>
-      <span style={loading ? {opacity: 0, height: 0} : {}}>{children}</span>
-      {loading && (
+    <BaseButton
+      isLoading={isLoading}
+      disabled={disabled}
+      onClick={_onClick}
+      {...props}
+    >
+      <span style={isLoading ? {opacity: 0, height: 0} : {}}>{children}</span>
+      {isLoading && (
         <LoadingSpinnerContainer>
-          <LoadingSpinner
+          <Spinner
             {...(disabled
               ? {}
               : {
