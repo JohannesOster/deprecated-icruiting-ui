@@ -15,6 +15,7 @@ export const BaseSelect = styled.select`
   width: 100%;
   min-width: 50px;
   padding: ${({theme}) => theme.spacing.scale200};
+  padding-right: ${({theme}) => theme.spacing.scale600};
 
   ${({theme}) => theme.typography.font100};
 
