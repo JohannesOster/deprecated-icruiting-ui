@@ -45,7 +45,7 @@ export const LoadingSpinnerContainer = styled.div`
 `;
 
 const getButtonStylesForKind = (
-  theme?: DefaultTheme,
+  theme: DefaultTheme,
   kind: ButtonKind = 'primary',
   disabled?: boolean,
 ) => {

@@ -2,7 +2,7 @@ import React, {MouseEvent} from 'react';
 import {useTheme} from 'styled-components';
 import {ButtonProps} from './types';
 import {BaseButton, LoadingSpinnerContainer} from './Button.sc';
-import {Spinner} from 'components';
+import {Spinner} from '../Spinner';
 
 export const Button: React.FC<ButtonProps> = ({
   children,
