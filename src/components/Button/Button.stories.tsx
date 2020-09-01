@@ -9,10 +9,7 @@ export default {
   argTypes: {
     kind: {
       defaultValue: 'primary',
-      control: {
-        type: 'select',
-        options: ['primary'],
-      },
+      control: {type: 'select', options: ['primary', 'minimal']},
     },
   },
 };
@@ -20,6 +17,4 @@ export default {
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Button',
-};
+Primary.args = {children: 'Button'};

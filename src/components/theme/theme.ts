@@ -14,6 +14,12 @@ export const theme = {
     buttonPrimaryDisabledFill: colors.gray50,
     buttonPrimaryDisabledText: colors.gray400,
 
+    buttonPrimaryDestructiveFill: colors.red400,
+    buttonPrimaryDestructiveText: colors.white,
+    buttonPrimaryDestructiveFillHover: colors.red300,
+
+    buttonMinimalDisabledText: colors.gray400,
+
     buttonLoadingSpinnerForeground: colors.white,
     buttonLoadingSpinnerBackground: colors.gray500,
 

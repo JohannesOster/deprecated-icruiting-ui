@@ -24,19 +24,14 @@ export const BaseButton = styled.button<BaseButtonProps>`
   transition-duration: ${({theme}) => theme.animation.timing100};
   transition-timing-function: ${({theme}) => theme.animation.linearCurve};
 
-  &:disabled {
-    cursor: not-allowed;
-    background: ${({theme}) => theme.colors.buttonPrimaryDisabledFill};
-    color: ${({theme}) => theme.colors.buttonPrimaryDisabledText};
-  }
-
   ${({isLoading}) =>
     isLoading &&
     css`
       pointer-events: none;
     `}
 
-  ${({theme, kind, disabled}) => getButtonStylesForKind(theme, kind, disabled)};
+  ${({theme, kind, destructive}) =>
+    getButtonStylesForKind(theme, kind, destructive)};
 `;
 
 export const LoadingSpinnerContainer = styled.div`
@@ -47,18 +42,47 @@ export const LoadingSpinnerContainer = styled.div`
 const getButtonStylesForKind = (
   theme: DefaultTheme,
   kind: ButtonKind = 'primary',
-  disabled?: boolean,
+  destructive?: boolean,
 ) => {
-  if (disabled) return;
-
   switch (kind) {
-    case 'primary':
+    case 'minimal':
       return css`
-        background-color: ${theme.colors.buttonPrimaryFill};
-        color: ${theme.colors.buttonPrimaryText};
+        color: ${destructive
+          ? theme.colors.typographyPrimaryError
+          : theme.colors.typographyPrimary};
+        padding: 0;
 
         &:hover {
-          background-color: ${theme.colors.buttonPrimaryFillHover};
+          color: ${destructive
+            ? theme.colors.typographySecondaryError
+            : theme.colors.typographySecondary};
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          color: ${({theme}) => theme.colors.buttonMinimalDisabledText};
+        }
+      `;
+    case 'primary':
+      return css`
+        background-color: ${destructive
+          ? theme.colors.buttonPrimaryDestructiveFill
+          : theme.colors.buttonPrimaryFill};
+        color: ${destructive
+          ? theme.colors.buttonPrimaryDestructiveText
+          : theme.colors.buttonPrimaryText};
+
+        &:hover {
+          background-color: ${destructive
+            ? theme.colors.buttonPrimaryDestructiveFillHover
+            : theme.colors.buttonPrimaryFillHover};
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          background-color: ${({theme}) =>
+            theme.colors.buttonPrimaryDisabledFill};
+          color: ${({theme}) => theme.colors.buttonPrimaryDisabledText};
         }
       `;
   }
