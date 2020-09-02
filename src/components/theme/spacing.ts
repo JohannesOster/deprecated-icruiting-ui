@@ -1,4 +1,5 @@
 export const spacing = {
+  scale50: '4px',
   scale100: '8px',
   scale200: '12px',
   scale300: '16px',

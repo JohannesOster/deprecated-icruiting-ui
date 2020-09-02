@@ -7,3 +7,4 @@ export * from './Spinner';
 export * from './Radio';
 export * from './Select';
 export * from './Textarea';
+export * from './ChipInput';
