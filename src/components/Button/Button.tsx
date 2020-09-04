@@ -9,6 +9,7 @@ export const Button: React.FC<ButtonProps> = ({
   isLoading,
   disabled,
   onClick,
+  type = 'button',
   ...props
 }) => {
   const {colors} = useTheme();
@@ -23,6 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
       isLoading={isLoading}
       disabled={disabled}
       onClick={_onClick}
+      type={type}
       {...props}
     >
       <span style={isLoading ? {opacity: 0, height: 0} : {}}>{children}</span>

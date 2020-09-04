@@ -7,6 +7,7 @@ export interface BaseButtonProps {
   kind?: ButtonKind;
   destructive?: boolean;
   disabled?: boolean;
+  type: 'button' | 'submit' | 'reset';
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
