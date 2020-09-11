@@ -47,6 +47,7 @@ const getButtonStylesForKind = (
   switch (kind) {
     case 'minimal':
       return css`
+        background: none;
         color: ${destructive
           ? theme.colors.typographyPrimaryError
           : theme.colors.typographyPrimary};
