@@ -10,7 +10,10 @@ import {
 import {RadioProps} from './types';
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({label, description, options, errors = [], ...props}, ref) => {
+  (
+    {label, description, options, errors = [], value, defaultValue, ...props},
+    ref,
+  ) => {
     const _errors = errors.map((error, idx) => (
       <span key={idx}>• {error}</span>
     ));
@@ -22,14 +25,16 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
           {props.required && '*'}
         </Label>
         <Description error={!!errors.length}>{description}</Description>
-        {options.map(({label, value}, idx) => {
+        {options.map(({label, value: optionValue}, idx) => {
+          const checked = optionValue === value || optionValue === defaultValue;
           return (
             <OptionContainer key={idx}>
               <input
+                {...props}
                 style={{margin: 0}}
                 type="radio"
-                value={value}
-                {...props}
+                value={optionValue}
+                {...(checked ? {checked: true} : {})}
                 ref={ref}
               />
               <OptionLabel>{label}</OptionLabel>
