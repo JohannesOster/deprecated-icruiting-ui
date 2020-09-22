@@ -9,7 +9,7 @@ import {
 } from './Radio.sc';
 import {RadioProps} from './types';
 
-const Radio: React.FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(
+const Radio = forwardRef<HTMLInputElement, RadioProps>(
   ({label, description, options, errors = [], ...props}, ref) => {
     const _errors = errors.map((error, idx) => (
       <span key={idx}>• {error}</span>
