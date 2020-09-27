@@ -9,3 +9,4 @@ export * from './Select';
 export * from './Textarea';
 export * from './ChipInput';
 export * from './Checkbox';
+export * from './Dialog';

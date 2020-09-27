@@ -1,6 +1,6 @@
 {
   "name": "icruiting-ui",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/JohannesOster/icruiting-ui#readme",
   "devDependencies": {
-    "@storybook/addon-actions": "^6.0.20",
-    "@storybook/addon-essentials": "^6.0.20",
-    "@storybook/addon-links": "^6.0.20",
+    "@storybook/addon-actions": "^6.0.22",
+    "@storybook/addon-essentials": "^6.0.22",
+    "@storybook/addon-links": "^6.0.22",
     "@storybook/preset-typescript": "^3.0.0",
-    "@storybook/react": "^6.0.20",
+    "@storybook/react": "^6.0.22",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@types/jest": "^26.0.10",
