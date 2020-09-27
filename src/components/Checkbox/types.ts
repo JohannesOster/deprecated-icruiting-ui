@@ -1,6 +1,6 @@
 import {ChangeEvent, FocusEvent} from 'react';
 
-export interface RadioProps {
+export interface CheckboxProps {
   name?: string;
   label?: string;
   autoFocus?: boolean;
@@ -15,6 +15,7 @@ export interface RadioProps {
   onBlur?(event: FocusEvent<HTMLInputElement>): void;
   onFocus?(event: FocusEvent<HTMLInputElement>): void;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface LabelProps {

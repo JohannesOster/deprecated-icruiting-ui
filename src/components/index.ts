@@ -8,3 +8,4 @@ export * from './Radio';
 export * from './Select';
 export * from './Textarea';
 export * from './ChipInput';
+export * from './Checkbox';
