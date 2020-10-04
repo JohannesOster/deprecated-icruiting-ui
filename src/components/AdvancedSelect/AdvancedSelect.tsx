@@ -69,7 +69,7 @@ export const AdvancedSelect: FC<AdvancedSelectProps> = ({
           </OptionsList>
         </OptionsContainer>
       </SelectContainer>
-      {errors && <Errors>{_errors}</Errors>}
+      {!!errors.length && <Errors>{_errors}</Errors>}
     </Container>
   );
 };

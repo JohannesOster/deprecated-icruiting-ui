@@ -25,7 +25,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
-        {errors && <Errors>{_errors}</Errors>}{' '}
+        {!!errors.length && <Errors>{_errors}</Errors>}{' '}
       </Container>
     );
   },

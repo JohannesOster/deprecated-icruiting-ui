@@ -45,7 +45,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
             </OptionContainer>
           );
         })}
-        {errors && <Errors>{_errors}</Errors>}
+        {!!errors.length && <Errors>{_errors}</Errors>}
       </Container>
     );
   },

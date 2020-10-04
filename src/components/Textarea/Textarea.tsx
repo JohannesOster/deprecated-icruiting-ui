@@ -26,7 +26,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <Description error={!!errors.length}>{description}</Description>
         )}
         <BaseTextarea error={!!errors.length} ref={ref} {...props} />
-        {errors && <Errors>{_errors}</Errors>}
+        {!!errors.length && <Errors>{_errors}</Errors>}
       </Container>
     );
   },

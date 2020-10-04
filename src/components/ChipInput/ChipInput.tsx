@@ -77,7 +77,7 @@ export const ChipInput: FC<ChipInputProps> = ({
           {...props}
         />
       </ChipContainer>
-      {errors && <Errors>{_errors}</Errors>}
+      {!!errors.length && <Errors>{_errors}</Errors>}
     </Container>
   );
 };

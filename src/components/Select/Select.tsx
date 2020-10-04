@@ -28,7 +28,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             );
           })}
         </BaseSelect>
-        {errors && <Errors>{_errors}</Errors>}
+        {!!errors.length && <Errors>{_errors}</Errors>}
       </Container>
     );
   },
