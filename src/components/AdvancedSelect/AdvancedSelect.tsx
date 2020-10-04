@@ -30,11 +30,15 @@ export const AdvancedSelect: FC<AdvancedSelectProps> = ({
 
   return (
     <Container>
-      <Label htmlFor={props.name} error={!!errors.length}>
-        {label}
-        {props.required && '*'}
-      </Label>
-      <Description error={!!errors.length}>{description}</Description>
+      {label && (
+        <Label htmlFor={props.name} error={!!errors.length}>
+          {label}
+          {props.required && '*'}
+        </Label>
+      )}
+      {description && (
+        <Description error={!!errors.length}>{description}</Description>
+      )}
       <SelectContainer>
         <BaseInput
           onClick={() => setSelectOpen((open) => !open)}
@@ -65,7 +69,7 @@ export const AdvancedSelect: FC<AdvancedSelectProps> = ({
           </OptionsList>
         </OptionsContainer>
       </SelectContainer>
-      <Errors>{_errors}</Errors>
+      {errors && <Errors>{_errors}</Errors>}
     </Container>
   );
 };

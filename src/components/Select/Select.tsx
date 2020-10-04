@@ -10,11 +10,15 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
 
     return (
       <Container>
-        <Label htmlFor={props.name} error={!!errors.length}>
-          {label}
-          {props.required && '*'}
-        </Label>
-        <Description error={!!errors.length}>{description}</Description>
+        {label && (
+          <Label htmlFor={props.name} error={!!errors.length}>
+            {label}
+            {props.required && '*'}
+          </Label>
+        )}
+        {description && (
+          <Description error={!!errors.length}>{description}</Description>
+        )}
         <BaseSelect {...props} ref={ref}>
           {options.map(({label, value}, idx) => {
             return (
@@ -24,7 +28,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             );
           })}
         </BaseSelect>
-        <Errors>{_errors}</Errors>
+        {errors && <Errors>{_errors}</Errors>}
       </Container>
     );
   },

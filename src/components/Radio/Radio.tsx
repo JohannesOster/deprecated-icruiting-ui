@@ -20,11 +20,15 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
 
     return (
       <Container>
-        <Label htmlFor={props.name} error={!!errors.length}>
-          {label}
-          {props.required && '*'}
-        </Label>
-        <Description error={!!errors.length}>{description}</Description>
+        {label && (
+          <Label htmlFor={props.name} error={!!errors.length}>
+            {label}
+            {props.required && '*'}
+          </Label>
+        )}
+        {description && (
+          <Description error={!!errors.length}>{description}</Description>
+        )}
         {options.map(({label, value: optionValue}, idx) => {
           const checked = optionValue === value || optionValue === defaultValue;
           return (
@@ -41,7 +45,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
             </OptionContainer>
           );
         })}
-        <Errors>{_errors}</Errors>
+        {errors && <Errors>{_errors}</Errors>}
       </Container>
     );
   },
