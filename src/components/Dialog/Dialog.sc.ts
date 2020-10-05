@@ -11,6 +11,7 @@ export const Overlay = styled.div`
 `;
 
 export const ContentBackground = styled.div`
+  box-sizing: border-box;
   background: white;
   position: absolute;
   max-height: calc(100vh - 210px);
@@ -20,6 +21,13 @@ export const ContentBackground = styled.div`
   transform: translate(-50%, -50%);
   padding: ${({theme}) => theme.spacing.scale500};
   min-width: 200px;
+
+  @media (max-width: 568px) {
+    overflow: scroll;
+    max-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+  }
 `;
 
 export const Close = styled.svg`
