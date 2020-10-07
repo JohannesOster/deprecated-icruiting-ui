@@ -8,8 +8,8 @@ export interface CheckboxProps {
   required?: boolean;
   errors?: Array<string>;
   options: Array<{label: string; value: string}>;
-  value?: string;
-  defaultValue?: string;
+  value?: string[];
+  defaultValue?: string[];
   disabled?: boolean;
   readOnly?: boolean;
   onBlur?(event: FocusEvent<HTMLInputElement>): void;

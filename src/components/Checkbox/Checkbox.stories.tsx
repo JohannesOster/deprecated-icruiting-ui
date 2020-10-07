@@ -17,6 +17,6 @@ Default.args = {
   name: 'radio',
   options: [
     {label: 'Optionlabel1', value: 'Optionlabel1'},
-    {label: 'Optionlabel1', value: 'Optionlabel1'},
+    {label: 'Optionlabel2', value: 'Optionlabel2'},
   ],
 };
