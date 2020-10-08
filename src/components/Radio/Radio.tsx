@@ -30,7 +30,10 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
           <Description error={!!errors.length}>{description}</Description>
         )}
         {options.map(({label, value: optionValue}, idx) => {
-          const checked = optionValue === value || optionValue === defaultValue;
+          const checked = {} as any;
+          if (defaultValue === optionValue) checked.defaultChecked = true;
+          else if (value === optionValue) checked.checked = true;
+
           return (
             <OptionContainer key={idx}>
               <input
@@ -38,7 +41,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
                 style={{margin: 0}}
                 type="radio"
                 value={optionValue}
-                {...(checked ? {checked: true} : {})}
+                {...checked}
                 ref={ref}
               />
               <OptionLabel>{label}</OptionLabel>
