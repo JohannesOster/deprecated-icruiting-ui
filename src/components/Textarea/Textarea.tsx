@@ -16,13 +16,17 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 
     return (
       <Container>
-        <Label htmlFor={props.name} error={!!errors.length}>
-          {label}
-          {props.required && '*'}
-        </Label>
-        <Description error={!!errors.length}>{description}</Description>
+        {label && (
+          <Label htmlFor={props.name} error={!!errors.length}>
+            {label}
+            {props.required && '*'}
+          </Label>
+        )}
+        {description && (
+          <Description error={!!errors.length}>{description}</Description>
+        )}
         <BaseTextarea error={!!errors.length} ref={ref} {...props} />
-        <Errors>{_errors}</Errors>
+        {!!errors.length && <Errors>{_errors}</Errors>}
       </Container>
     );
   },

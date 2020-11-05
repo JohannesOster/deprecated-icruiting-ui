@@ -50,11 +50,15 @@ export const ChipInput: FC<ChipInputProps> = ({
 
   return (
     <Container>
-      <Label htmlFor={props.name} error={!!errors.length}>
-        {label}
-        {props.required && '*'}
-      </Label>
-      <Description error={!!errors.length}>{description}</Description>
+      {label && (
+        <Label htmlFor={props.name} error={!!errors.length}>
+          {label}
+          {props.required && '*'}
+        </Label>
+      )}
+      {description && (
+        <Description error={!!errors.length}>{description}</Description>
+      )}
       <ChipContainer error={!!errors.length}>
         {chips.map((chip, idx) => (
           <Chip key={idx}>
@@ -73,8 +77,7 @@ export const ChipInput: FC<ChipInputProps> = ({
           {...props}
         />
       </ChipContainer>
-
-      <Errors>{_errors}</Errors>
+      {!!errors.length && <Errors>{_errors}</Errors>}
     </Container>
   );
 };

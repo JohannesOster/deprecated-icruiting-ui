@@ -13,7 +13,6 @@ const Template: Story<RadioProps> = (args) => <Radio {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   label: 'Label',
-  placeholder: 'Placeholder',
   description: 'Descriptiontext',
   name: 'radio',
   options: [

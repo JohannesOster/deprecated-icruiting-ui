@@ -9,34 +9,46 @@ import {
 } from './Radio.sc';
 import {RadioProps} from './types';
 
-const Radio: React.FC<RadioProps> = forwardRef<HTMLInputElement, RadioProps>(
-  ({label, description, options, errors = [], ...props}, ref) => {
+const Radio = forwardRef<HTMLInputElement, RadioProps>(
+  (
+    {label, description, options, errors = [], value, defaultValue, ...props},
+    ref,
+  ) => {
     const _errors = errors.map((error, idx) => (
       <span key={idx}>• {error}</span>
     ));
 
     return (
       <Container>
-        <Label htmlFor={props.name} error={!!errors.length}>
-          {label}
-          {props.required && '*'}
-        </Label>
-        <Description error={!!errors.length}>{description}</Description>
-        {options.map(({label, value}, idx) => {
+        {label && (
+          <Label htmlFor={props.name} error={!!errors.length}>
+            {label}
+            {props.required && '*'}
+          </Label>
+        )}
+        {description && (
+          <Description error={!!errors.length}>{description}</Description>
+        )}
+        {options.map(({label, value: optionValue}, idx) => {
+          const checked = {} as any;
+          if (defaultValue === optionValue) checked.defaultChecked = true;
+          else if (value === optionValue) checked.checked = true;
+
           return (
             <OptionContainer key={idx}>
               <input
+                {...props}
                 style={{margin: 0}}
                 type="radio"
-                value={value}
-                {...props}
+                value={optionValue}
+                {...checked}
                 ref={ref}
               />
               <OptionLabel>{label}</OptionLabel>
             </OptionContainer>
           );
         })}
-        <Errors>{_errors}</Errors>
+        {!!errors.length && <Errors>{_errors}</Errors>}
       </Container>
     );
   },
