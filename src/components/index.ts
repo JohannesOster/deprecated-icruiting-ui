@@ -1,6 +1,7 @@
 export * from './theme';
 
 export * from './createCtx';
+export * from './ToasterCtx';
 
 export * from './Button';
 export * from './Input';
