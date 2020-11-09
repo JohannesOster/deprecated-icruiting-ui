@@ -28,6 +28,7 @@ export interface InputProps {
   defaultValue?: string;
   disabled?: boolean;
   readOnly?: boolean;
+  accept?: string;
   onBlur?(event: FocusEvent<HTMLInputElement>): void;
   onFocus?(event: FocusEvent<HTMLInputElement>): void;
   onChange?(event: ChangeEvent<HTMLInputElement>): void;
