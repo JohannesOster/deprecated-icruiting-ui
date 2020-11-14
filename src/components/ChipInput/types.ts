@@ -16,6 +16,10 @@ export interface ChipInputProps {
   value?: string[];
   defaultValue?: string[];
   readOnly?: boolean;
+  /** The key to press to confirm the current input and convert it to chip.
+   * default = 'Tab'
+   */
+  confirmKey?: string;
   onBlur?(event: FocusEvent<HTMLInputElement>): void;
   onFocus?(event: FocusEvent<HTMLInputElement>): void;
   onChange?(value: string[]): void;

@@ -9,7 +9,7 @@ import {
   Chip,
   ChipCloseBtn,
 } from './ChipInput.sc';
-import {ChipInputProps, EKeyCode} from './types';
+import {ChipInputProps} from './types';
 
 export const ChipInput: FC<ChipInputProps> = ({
   label,
@@ -18,6 +18,7 @@ export const ChipInput: FC<ChipInputProps> = ({
   onChange,
   value,
   defaultValue,
+  confirmKey = 'Tab',
   ...props
 }) => {
   const [chips, setChips] = useState<string[]>(value || defaultValue || []);
@@ -34,13 +35,14 @@ export const ChipInput: FC<ChipInputProps> = ({
   };
 
   const _onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.keyCode === EKeyCode.ENTER) {
+    if (event.key === confirmKey) {
       if (!_value) return;
+      event.preventDefault();
       const newVal = chips.concat(_value);
       onChange && onChange(newVal);
       setChips(newVal);
       setValue('');
-    } else if (event.keyCode === EKeyCode.BACKSPACE) {
+    } else if (event.key === 'Backspace') {
       if (_value || !chips.length) return;
       removeChip(chips.length - 1);
     }
