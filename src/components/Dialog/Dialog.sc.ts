@@ -30,15 +30,18 @@ export const ContentBackground = styled.div`
   }
 `;
 
-export const Close = styled.svg`
+export const Close = styled.span`
   position: absolute;
+  display: flex;
   cursor: pointer;
   top: 0;
   right: 0;
   padding: ${({theme}) => theme.spacing.scale100};
 
-  stroke: black;
-  stroke-width: 3px;
-  height: 25px;
-  width: 25px;
+  svg {
+    stroke: black;
+    stroke-width: 3px;
+    height: 25px;
+    width: 25px;
+  }
 `;

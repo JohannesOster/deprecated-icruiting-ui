@@ -23,8 +23,10 @@ export const Dialog: React.FC<DialogProps> = ({onClose, children}) => {
   return (
     <Overlay onMouseDown={onMouseDown}>
       <ContentBackground>
-        <Close onClick={() => onClose()} viewBox="0 0 40 40">
-          <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
+        <Close onClick={() => onClose()}>
+          <svg viewBox="0 0 40 40">
+            <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
+          </svg>
         </Close>
         {children}
       </ContentBackground>

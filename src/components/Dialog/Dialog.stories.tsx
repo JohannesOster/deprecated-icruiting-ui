@@ -11,9 +11,4 @@ export default {
 const Template: Story<DialogProps> = (args) => <Dialog {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  label: 'Label',
-  placeholder: 'Placeholder',
-  description: 'Descriptiontext',
-  value: ['Chip 1'],
-};
+Default.args = {};
